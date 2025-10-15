@@ -1,0 +1,124 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120,
+    "attributePosition": "auto"
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "files": {
+    "includes": [
+      "**",
+      "grit-patterns",
+      "!.grit",
+      "!**/.next",
+      "!**/.vercel",
+      "!**/node_modules",
+      "!**/public"
+    ]
+  },
+  "linter": {
+    "enabled": true,
+    "domains": {
+      "next": "all",
+      "react": "all"
+    },
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "useKeyWithClickEvents": "off",
+        "useKeyWithMouseEvents": "off",
+        "useAriaPropsSupportedByRole": "off",
+        "noStaticElementInteractions": "off",
+        "noLabelWithoutControl": {
+          "options": {
+            "inputComponents": [
+              "Input",
+              "TextArea",
+              "NumberInput",
+              "PhoneNumberInput"
+            ]
+          },
+          "level": "error"
+        }
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": {
+          "level": "error",
+          "options": {
+            "maxAllowedComplexity": 15
+          }
+        }
+      },
+      "correctness": {
+        "noUnusedVariables": "error",
+        "noUnusedImports": "error",
+        "useHookAtTopLevel": "error",
+        "useUniqueElementIds": "off",
+        "useExhaustiveDependencies": {
+          "level": "error",
+          "options": {
+            "hooks": [
+              {
+                "name": "useCallback",
+                "closureIndex": null,
+                "dependenciesIndex": null
+              }
+            ],
+            "reportMissingDependenciesArray": false,
+            "reportUnnecessaryDependencies": false
+          }
+        }
+      },
+      "nursery": {},
+      "style": {
+        "useImportType": "error",
+        "useNodejsImportProtocol": "off"
+      },
+      "suspicious": {
+        "noEmptyBlockStatements": "error",
+        "noThenProperty": "off",
+        "noConsole": {
+          "level": "error",
+          "options": {
+            "allow": [
+              "info",
+              "warn",
+              "error",
+              "timeEnd",
+              "time"
+            ]
+          }
+        }
+      }
+    },
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/.next",
+      "!**/public"
+    ]
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
+    }
+  }
+}
