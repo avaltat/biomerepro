@@ -64,21 +64,7 @@
         "noUnusedVariables": "error",
         "noUnusedImports": "error",
         "useHookAtTopLevel": "error",
-        "useUniqueElementIds": "off",
-        "useExhaustiveDependencies": {
-          "level": "error",
-          "options": {
-            "hooks": [
-              {
-                "name": "useCallback",
-                "closureIndex": null,
-                "dependenciesIndex": null
-              }
-            ],
-            "reportMissingDependenciesArray": false,
-            "reportUnnecessaryDependencies": false
-          }
-        }
+        "useUniqueElementIds": "off"
       },
       "nursery": {},
       "style": {
